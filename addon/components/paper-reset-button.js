@@ -8,6 +8,13 @@ export default Component.extend(TransitionMixin, {
   onReset: null,
 
   mouseUp(e) {
+    this.reset(e);
+  },
+  touchEnd(e) {
+    this.reset(e);
+  },
+
+  reset(e) {
     let onReset = this.get('onReset');
     if (onReset === null) {
       return;
